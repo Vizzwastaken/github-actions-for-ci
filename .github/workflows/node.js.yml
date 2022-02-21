@@ -6,9 +6,13 @@ name: Node.js CI
 on:
   push:
     branches: [ main ]
+    
 jobs:
+  
   build:
+  
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
       - name: npm install and npm build pack
@@ -21,7 +25,9 @@ jobs:
           path: public/
   
   test:
+  
     needs: build
+    
     runs-on: ubuntu-latest
 
   strategy:
